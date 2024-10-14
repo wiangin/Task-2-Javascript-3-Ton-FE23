@@ -1,0 +1,13 @@
+.cell-container{
+   display: grid;
+   grid-template-rows: 50px 50px 50px 50px 50px;
+   grid-template-columns: 50px 50px 50px 50px 50px;
+   grid-template-areas: 
+   "cell cell cell cell cell"
+   "cell cell cell cell cell"
+   "cell cell cell cell cell"
+   "cell cell cell cell cell"
+   "cell cell cell cell cell"
+   ;
+   
+}

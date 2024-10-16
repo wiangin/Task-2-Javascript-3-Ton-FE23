@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className='main'>  
-        <Board gameBoard={createBoard}></Board>
+        <Board onGameBoard={createBoard}></Board>
     </div>
   )
 }

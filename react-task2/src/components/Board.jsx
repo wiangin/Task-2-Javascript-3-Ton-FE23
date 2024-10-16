@@ -5,25 +5,40 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default class Board extends React.Component{
 
-    objArray;
+
 
     constructor(props){
-        super(props)
+        super(props) 
+        this.state = {
+            gameBoard: props.onGameBoard(25,7)
+        }
         
-        this.objArray = props.gameBoard(25,7);
-  
+        // console.log(this.state);
+        
     }
 
     callbackFunc = (dataFromCell) => {
-        console.log("obj from Cell",dataFromCell);
+        console.log(dataFromCell);
         
+        const updateBoard = this.state.gameBoard.map(element => {
+        
+           if(element.index === dataFromCell.index){
+               return {...element,visible : true};
+           }
+           return element;
+        })
+   
+        this.setState({gameBoard: updateBoard});
     }
     render(){
         return(
             <div className="cell-container">
-             {this.objArray.map((element) => {return <Cell onClick={this.callbackFunc}
-                key={uuidv4()} 
-                cell={element}/>})}
+             {  this.state.gameBoard.map((element) => {
+                return <Cell 
+                            onClick={this.callbackFunc}
+                            key={uuidv4()} 
+                            cell={ element }
+                        /> })}
             </div>
         )
     }

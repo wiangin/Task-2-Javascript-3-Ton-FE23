@@ -5,21 +5,17 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default class Board extends React.Component{
 
-
-
     constructor(props){
         super(props) 
         this.state = {
             gameBoard: props.onGameBoard(25,7)
         }
-        
-        // console.log(this.state);
-        
     }
 
-    callbackFunc = (dataFromCell) => {
-        console.log(dataFromCell);
-        
+    getDataFromCell = (dataFromCell) => { //måste andra namn på callback
+        console.log(dataFromCell); 
+        this.props.onMine(dataFromCell);
+
         const updateBoard = this.state.gameBoard.map(element => {
         
            if(element.index === dataFromCell.index){
@@ -30,16 +26,22 @@ export default class Board extends React.Component{
    
         this.setState({gameBoard: updateBoard});
     }
+
+    isGameOver = () => {}
+
     render(){
         return(
-            <div className="cell-container">
-             {  this.state.gameBoard.map((element) => {
-                return <Cell 
-                            onClick={this.callbackFunc}
+           <>   
+                <div className="cell-container">
+                    { this.state.gameBoard.map((element) => { 
+                        return <Cell 
+                            onClick={this.getDataFromCell}
                             key={uuidv4()} 
                             cell={ element }
-                        /> })}
-            </div>
+                            /> })
+                    }
+                </div>
+           </>     
         )
     }
 }

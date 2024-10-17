@@ -1,0 +1,42 @@
+.cellStyle{
+    border: 1px solid black;
+
+}
+
+.isBomb{
+   color: wheat;
+   background: red;
+   height: 100%;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.justStyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.isOpened{
+    background: lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.buttonStyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+
+
+    border: 1px solid black;
+}

@@ -1,7 +1,7 @@
 .cell-container{
    display: grid;
-   grid-template-rows: 50px 50px 50px 50px 50px;
-   grid-template-columns: 50px 50px 50px 50px 50px;
+   grid-template-rows: 80px 80px 80px 80px 80px;
+   grid-template-columns: 80px 80px 80px 80px 80px;
    grid-template-areas: 
    "cell cell cell cell cell"
    "cell cell cell cell cell"
@@ -9,5 +9,5 @@
    "cell cell cell cell cell"
    "cell cell cell cell cell"
    ;
-   
+   border: 1px solid black;
 }

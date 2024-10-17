@@ -1,44 +1,39 @@
-import "../style/CellStyle.css";
+import styles from '../style/CellStyle.module.css';
+import { useState, useEffect } from 'react';
+
+// import "../style/CellStyle.css";
 
 export default function Cell(props){
     
-    // console.log(props.cell);
-    
+    const {cell} = props;
+    console.log(cell);
+
+    // const [state, setState] = useState(0);
+    const [gameWin, setGameWin] = useState(0);
+
     const clickHandler = (event) => {
-        // console.log( "I min click handler ",props.cell);
-        props.onClick(props.cell)
-        
-        if(props.cell.hasMine === true){
-           
-            console.log("KAH BOOM!!!");
-        }
-        else{
-        
-            console.log("Du överlev!");  
-        }
+
+        props.onClick(cell);
+
     }
 
     const showCell = () => {
         let content;
 
-        if(!props.cell.visible){ 
-            return content = <p>?</p>
+        if( !cell.visible ){ 
+            return content = <div className={styles.justStyle}><p>? {cell.index}</p></div>
+        } else if(cell.hasMine){
+            return content = <div className={styles.isBomb}><p>Bomb</p></div>
         } else{
-             return content = <p>{props.cell.numberOfNeighbouringMines}</p>
+             return content = <div className={styles.isOpened}><p>{cell.numberOfNeighbouringMines}</p></div>
         }
     }
 
     return(
         <>
-            <div className="cell-style" onClick={clickHandler}> 
-             
-                { showCell() }
-   
-             </div> 
-
+       
+            <div className={styles.cellStyle} onClick={ clickHandler }> { showCell() } </div> 
         </>
             
     )
 }   
-
-// !props.cell.visible ? <p>?</p> : <p>{{props.cell.numberOfNeighbouringMines}}</p>

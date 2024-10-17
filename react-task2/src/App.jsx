@@ -6,10 +6,36 @@ import './App.css'
 
 function App() {
 
+  const mainDivStyle = {
+    display: "flex",
+    height: "100vh",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column"
+  }
+
+  const [mineFound, setMineFound] = useState(false);
+  const [gameWin, setGameWin] = useState(0);
+  console.log(gameWin);
+  
+  const checkIfHasMine = (dataFromBoard) => {
+    // console.log(mineOrNot);
+      if(dataFromBoard.hasMine){
+        setMineFound(true)
+        setGameWin(0)
+      } else{
+        setGameWin((prevValue) => {
+          return prevValue + 1;
+      })
+      }
+  }
 
   return (
-    <div className='main'>  
-        <Board onGameBoard={createBoard}></Board>
+    <div className='main' style={mainDivStyle}> 
+        <h1>Min Röj</h1>
+        {!mineFound ? <h2></h2> : <h2>{mineFound}Game Over</h2>}
+        {gameWin === 18 && <h2>You Win</h2>}
+        <Board onGameBoard={createBoard} onMine={checkIfHasMine} />
     </div>
   )
 }

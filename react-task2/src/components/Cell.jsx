@@ -1,38 +1,44 @@
 import styles from '../style/CellStyle.module.css';
+import bombIcon from '../assets/bombIcon.png';
 import { useState, useEffect } from 'react';
 
-// import "../style/CellStyle.css";
+export default function Cell( props ){
+    console.log( props.cell );
 
-export default function Cell(props){
-    
-    const {cell} = props;
-    console.log(cell);
+    const { cell } = props;
 
-    // const [state, setState] = useState(0);
-    const [gameWin, setGameWin] = useState(0);
+    const clickHandler = () => {
 
-    const clickHandler = (event) => {
-
-        props.onClick(cell);
+        props.onClick( cell );
 
     }
+
+    const WinningGame = () => {
+        let element;
+            if( props.onGameWin === 18 || props.onGameLose === true){
+                return element =  <div className={styles.cellStyle} > { showCell() } </div> 
+            } else{
+                return element = <div className={styles.cellStyle} onClick={ clickHandler }> { showCell() } </div> 
+            }
+       }
 
     const showCell = () => {
-        let content;
+        let element;
 
         if( !cell.visible ){ 
-            return content = <div className={styles.justStyle}><p>? {cell.index}</p></div>
-        } else if(cell.hasMine){
-            return content = <div className={styles.isBomb}><p>Bomb</p></div>
+            return element = <div className={ styles.justStyle }><p>?</p></div>
+        } else if( cell.hasMine ){
+            return element = <div className={ styles.isBomb }><img src={bombIcon}/></div>
+        } else if(cell.numberOfNeighbouringMines === 0){
+            return element = <div className={ styles.isOpened }></div>
         } else{
-             return content = <div className={styles.isOpened}><p>{cell.numberOfNeighbouringMines}</p></div>
+             return element = <div className={ styles.isOpened }><p>{ cell.numberOfNeighbouringMines }</p></div>
         }
     }
-
+    
     return(
         <>
-       
-            <div className={styles.cellStyle} onClick={ clickHandler }> { showCell() } </div> 
+            { WinningGame() }
         </>
             
     )

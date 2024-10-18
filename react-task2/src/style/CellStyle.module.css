@@ -1,42 +1,41 @@
 .cellStyle{
-    border: 1px solid black;
-
+    border: 1px solid rgb(254, 254, 254);
+    border-radius: 10px;
+    padding: 3px;
 }
 
 .isBomb{
    color: wheat;
    background: red;
    height: 100%;
-   position: relative;
    display: flex;
    justify-content: center;
    align-items: center;
+   border-radius: 10px;
 }
 
 .justStyle{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     height: 100%;
+    background: black;
+    color: wheat;
+    border-radius: 10px;
 }
 
 .isOpened{
-    background: lightgreen;
+    background: rgb(49, 223, 49);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    height: 100%;
+    min-height: 100%;
+    border-radius: 10px;
 }
 
-.buttonStyle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 100%;
-
-
-    border: 1px solid black;
+img{
+    max-width: 60px;
+    border-radius: 10px;
+    padding: 0;
+    margin: 0;
 }

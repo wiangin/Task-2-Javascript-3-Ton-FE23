@@ -1,3 +1,7 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 .main{
     background-image: url(../src/assets/gameBackground1.png);
     background-size: cover;
@@ -11,12 +15,18 @@
       "SCAN" 0,
       "XELA" 0,
       "YELA" 0;   
+      min-height: 100vh;
 }
 
+.mineFoundDiv{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
 
 h1{
     background: rgb(232, 232, 232);
-    padding: 10px 50px;
+    padding: 30px 50px;
     border-radius: 10px;
     box-shadow: 25px 25px 75px rgb(0, 0, 0, 0.25),
     10px 10px 70px rgb(0, 0, 0, 0.25),
@@ -27,6 +37,7 @@ h1{
 
 h2{
     background: rgb(232, 232, 232);
+    margin-bottom: 20px;
     padding: 10px 50px;
     border-radius: 10px;
     box-shadow: 25px 25px 75px rgb(0, 0, 0, 0.25),
@@ -34,4 +45,31 @@ h2{
     inset 5px 5px 10px rgb(0, 0, 0, 0.5),
     inset 5px 5px 20px rgb(225, 225, 225, 0.2),
     inset -5px -5px 15px rgb(0, 0, 0, 0.75);
+}
+
+button{
+    background: rgb(232, 232, 232);
+    padding: 10px 50px;
+    border-radius: 10px;
+    box-shadow: 25px 25px 75px rgb(0, 0, 0, 0.25),
+    10px 10px 70px rgb(0, 0, 0, 0.25),
+    inset 5px 5px 10px rgb(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgb(225, 225, 225, 0.2),
+    inset -5px -5px 15px rgb(0, 0, 0, 0.75); 
+    border: none;
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 0,
+      "SCAN" 0,
+      "XELA" 0,
+      "YELA" 0;   
+      cursor: pointer;
+      font-size: larger;
+}
+
+.copyRightDiv{
+    margin-top: 20px;
 }

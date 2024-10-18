@@ -3,13 +3,14 @@ import "../style/BoardStyle.css";
 import Cell from "./Cell";
 import { v4 as uuidv4 } from 'uuid';
 
+
 export default class Board extends React.Component{
 
     constructor( props ){
         super( props ) 
         this.state = {
             gameBoard: props.onGameBoard( 25,7 )
-        }
+        };
     }
 
     getDataFromCell = ( dataFromCell ) => { //måste andra namn på callback
@@ -22,7 +23,7 @@ export default class Board extends React.Component{
                return { ...element,visible : true };
            }
            return element;
-        })
+        });
    
         this.setState({ gameBoard: updateBoard });
     }

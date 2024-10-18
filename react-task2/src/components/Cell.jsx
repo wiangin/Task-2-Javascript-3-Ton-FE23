@@ -1,6 +1,6 @@
 import styles from '../style/CellStyle.module.css';
 import bombIcon from '../assets/bombIcon.png';
-import { useState, useEffect } from 'react';
+
 
 export default function Cell( props ){
     console.log( props.cell );
@@ -11,16 +11,16 @@ export default function Cell( props ){
 
         props.onClick( cell );
 
-    }
+    };
 
     const WinningGame = () => {
         let element;
-            if( props.onGameWin === 18 || props.onGameLose === true){
-                return element =  <div className={styles.cellStyle} > { showCell() } </div> 
-            } else{
-                return element = <div className={styles.cellStyle} onClick={ clickHandler }> { showCell() } </div> 
-            }
-       }
+        if( props.onGameWin === 18 || props.onGameLose === true){
+            return element =  <div className={styles.cellStyle} > { showCell() } </div> 
+        } else{
+            return element = <div className={styles.cellStyle} onClick={ clickHandler }> { showCell() } </div> 
+        }
+    };
 
     const showCell = () => {
         let element;
@@ -34,7 +34,7 @@ export default function Cell( props ){
         } else{
              return element = <div className={ styles.isOpened }><p>{ cell.numberOfNeighbouringMines }</p></div>
         }
-    }
+    };
     
     return(
         <>

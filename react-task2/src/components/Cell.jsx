@@ -1,3 +1,6 @@
+// Ton FE23 Grit Academy
+// This component displays all cells and includes a click handler to send object back to the parent for modification.
+
 import styles from '../style/CellStyle.module.css';
 import bombIcon from '../assets/bombIcon.png';
 

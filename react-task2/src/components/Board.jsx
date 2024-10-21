@@ -1,3 +1,6 @@
+// Ton FE23 Grit Academy
+// This component generates 25 cells and contains a callback function to modify the object's properties.
+
 import React from "react";
 import "../style/BoardStyle.css";
 import Cell from "./Cell";
@@ -14,7 +17,7 @@ export default class Board extends React.Component{
     }
 
     getDataFromCell = ( dataFromCell ) => {
-        console.log(dataFromCell); 
+     
         this.props.onMine( dataFromCell );
 
         const updateBoard = this.state.gameBoard.map( element => {

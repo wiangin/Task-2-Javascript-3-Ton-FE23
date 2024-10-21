@@ -1,3 +1,6 @@
+// Ton FE23 Grit Academy
+// This component shows when the mine is found and when the player wins.
+
 import { useState } from 'react';
 import Board from './components/Board';
 import createBoard from './utils';

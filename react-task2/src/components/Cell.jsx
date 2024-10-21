@@ -3,8 +3,7 @@ import bombIcon from '../assets/bombIcon.png';
 
 
 export default function Cell( props ){
-    console.log( props.cell );
-
+    
     const { cell } = props;
 
     const clickHandler = () => {
@@ -13,8 +12,10 @@ export default function Cell( props ){
 
     };
 
-    const WinningGame = () => {
+    const displayBoardGame = () => {
+
         let element;
+
         if( props.onGameWin === 18 || props.onGameLose === true){
             return element =  <div className={styles.cellStyle} > { showCell() } </div> 
         } else{
@@ -23,6 +24,7 @@ export default function Cell( props ){
     };
 
     const showCell = () => {
+
         let element;
 
         if( !cell.visible ){ 
@@ -38,7 +40,7 @@ export default function Cell( props ){
     
     return(
         <>
-            { WinningGame() }
+            { displayBoardGame() }
         </>
             
     )

@@ -4,7 +4,6 @@ import createBoard from './utils';
 import './App.css';
 
 
-
 function App() {
 
   const mainDivStyle = {

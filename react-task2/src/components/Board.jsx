@@ -13,7 +13,7 @@ export default class Board extends React.Component{
         };
     }
 
-    getDataFromCell = ( dataFromCell ) => { //måste andra namn på callback
+    getDataFromCell = ( dataFromCell ) => {
         console.log(dataFromCell); 
         this.props.onMine( dataFromCell );
 
@@ -34,12 +34,12 @@ export default class Board extends React.Component{
                 <div className="cell-container">
                     { this.state.gameBoard.map(( element ) => { 
                         return <Cell 
-                            onClick={ this.getDataFromCell }
-                            key={ uuidv4() } 
-                            cell={ element }
-                            onGameWin={ this.props.onGameWin }
-                            onGameLose={ this.props.onGameLose }
-                            /> })
+                                    onClick={ this.getDataFromCell }
+                                    key={ uuidv4() } 
+                                    cell={ element }
+                                    onGameWin={ this.props.onGameWin }
+                                    onGameLose={ this.props.onGameLose }
+                                /> })
                     }
                 </div>
            </>     
